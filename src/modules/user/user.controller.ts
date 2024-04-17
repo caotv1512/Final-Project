@@ -21,5 +21,8 @@ export class UserController {
     return this.userService.create(createUserDto);
   }
 
-
+  @Put()
+  updateUser(@Body() userData: UpdateUserDTO, @Param('id') id) {
+    return this.userService.update( id, userData);
+  }
 }
