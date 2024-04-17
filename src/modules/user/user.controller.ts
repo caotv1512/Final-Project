@@ -16,5 +16,9 @@ export class UserController {
     return this.userService.findAll();
   }
 
+  @Put()
 
+  updateUser(@Body() userData: UpdateUserDTO, @Param('id') id) {
+    return this.userService.update( id, userData);
+  }
 }
